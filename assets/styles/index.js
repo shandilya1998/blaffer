@@ -15,7 +15,6 @@ const DISLIKE_ACTIONS = "#363636";
 const FLASH_ACTIONS = "#5028D7";
 
 const ICON_FONT = "tinderclone";
-
 const DIMENSION_WIDTH = Dimensions.get("window").width;
 const DIMENSION_HEIGHT = Dimensions.get("window").height;
 
@@ -379,16 +378,19 @@ export default StyleSheet.create({
   },
   // PLACES DIRECTORY SCREEN V2
   cardContainer : {
-    flex : 1, 
-    alignItems : 'center',
-    justifyContent : 'center',
-    height : DIMENSION_HEIGHT*0.75,
+	  flex : 1, 
+	  alignItems : 'center',
+	  justifyContent : 'center',
+	  marginHorizontal : 10,
+	  height : DIMENSION_HEIGHT*0.3,
+	  width : DIMENSION_WIDTH*0.4
   },
   ImagePlaces : {
     flex : 1,
     resizeMode : 'repeat',
     flexDirection : 'row',
-    width : DIMENSION_WIDTH*0.9,
+    width : DIMENSION_WIDTH*0.4,
+    height : DIMENSION_HEIGHT*0.27,
     alignItems : 'flex-end',
     justifyContent : 'center',
     borderWidth : 2,
@@ -400,8 +402,12 @@ export default StyleSheet.create({
     justifyContent : 'center', 
     alignItems : 'center', },
   // COMPONENT - ITINERARY LIST
-  itineraryListView : {
-  
-  },
+  cardItemDescriptionContainer : {
+	  flex : 0.15,
+	  flexDirection : "column" ,
+	  justifyContent : 'center',
+	  alignItems : 'center',
+	  width : DIMENSION_WIDTH*0.4,
+  	  margin : 5}
 
 });

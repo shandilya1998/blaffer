@@ -29,10 +29,21 @@ class CardItem extends Component{
         return(
             <View style = {styles.cardContainer}>
                 <View styles = {styles.ImageContainer}>
-                    <Image source ={this.props.image} style = {styles.ImagePlaces} resizeMethod = 'auto'/>
-                    <View style = {{flex : 0.15, flexDirection : "column" ,justifyContent : 'center', alignItems : 'center'}}>
-                        <Text style = {{fontSize : 22}}>{this.props.name}</Text>
-                        <Text style = {{fontSize : 15}}>{this.props.description}</Text>
+                    <ImageBackground source ={this.props.image} style = {styles.ImagePlaces} resizeMethod = 'auto'>
+			<View style = {{flex : 1, flexDirection : 'row', justifyContent : 'space-around', padding : 20}}>
+                            <TouchableOpacity>
+                                <Image source = {require("../assets/images/icons/icons8-thumbs-down-26.png")} />
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress = {this.props.navigation.navigate("MoreInfoScreen")}>
+                                <Image source = {require("../assets/images/icons/icons8-info-26.png")} />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <Image source = {require("../assets/images/icons/icons8-two-hearts-26.png")} />
+                            </TouchableOpacity>
+                        </View>
+                    </ImageBackground>
+		    <View style = {styles.cardItemDescriptionContainer}>
+                        <Text style = {{fontSize : 14, textAlign : 'center'}}>{this.props.name}</Text>
                     </View>
                 </View>
             </View>

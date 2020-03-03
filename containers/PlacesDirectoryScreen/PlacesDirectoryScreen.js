@@ -73,8 +73,16 @@ class PlacesDirectoryScreen extends Component{
                                         		rightButtonVisible = {false}/>
                         		</View>
 				</View>
+				<SafeAreaView style = {styles.itineraryListContainer}>	
+					<FlatList 
+						data = {this.props.places}
+						renderItem = {(item, index, separator)=>this.renderItem(item, index, separator)}
+						keyExtractor = {(item)=>item.id}
+						ListEmptyComponent = {()=><View><Text>Places coming in a moment</Text></View>}
+						numColumns={2}/>
+				</SafeAreaView>
 				<View style = {[styles.inputView, {flex : 10}]}>
-					<GooglePlacesAutocomplete
+                                        <GooglePlacesAutocomplete
                                                         placeholder='Search for a place here'
                                                         minLength = {2}
                                                         autoFocus = {false}
@@ -105,14 +113,7 @@ class PlacesDirectoryScreen extends Component{
                                                                 predefinedPlacesDescription: {
                                                                         color: '#1faadb'
                                                                 }}}/>
-				</View>
-				<SafeAreaView style = {styles.itineraryListContainer}>	
-					<FlatList 
-						data = {this.props.places}
-						renderItem = {(item, index, separator)=>this.renderItem(item, index, separator)}
-						keyExtractor = {(item)=>item.id}
-						ListEmptyComponent = {()=><View><Text>Places coming in a moment</Text></View>}/>
-				</SafeAreaView>
+                                </View>
 			</ImageBackground>
 		);
 	}
