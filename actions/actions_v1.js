@@ -5,6 +5,7 @@ export const FETCH_PLACE_SUCCESS = 'trvl_app_database_event_fetch_place_from_dat
 export const FETCH_PLACE_FAILURE = 'trvl_app_database_event_fetch_place_from_database_failure';
 export const FETCH_PLACE_PENDING = 'trvl_app_database_event_fetch_place_from_database_pending';
 export const ADD_PLACE_TO_ITINERARY = 'trvl_app_database_event_push_place_itinerary';
+export const FETCH_PLACES_BATCH = 'trvl_app_database_event_pull_places_page_places_dir';
 
 export function updateItinerary(itinerary){
 	return({
@@ -36,6 +37,10 @@ export function fetchPlaceError(error){
 	});
 }
 
-
-
-
+export function loadPlacesBatch(page){
+	console.log(page)
+	return({
+		type : FETCH_PLACES_BATCH,
+		page : page
+	});
+}

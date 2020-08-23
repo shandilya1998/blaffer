@@ -28,7 +28,7 @@ class Header extends Component{
 			);
 		}
 		else{
-			return(<View></View>);
+			return(<View><Image source = {require('../assets/images/transparent.png')}/></View>);
 		}
 	}
 
@@ -41,7 +41,7 @@ class Header extends Component{
                         );
                 }
                 else{
-                        return(<View></View>);
+                        return(<View><Image source = {require('../assets/images/transparent.png')}/></View>);
                 } 
 	}
 
@@ -53,7 +53,7 @@ class Header extends Component{
 					{this.getLeftButton()}
 				</View>
 				<View>
-					<Image source = {require('../assets/images/icons/logo.png')}/>
+					<Image source = {require('../assets/images/icons/temp_logo.png')}/>
 				</View>
 				<View>
 					{this.getRightButton()}

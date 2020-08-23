@@ -381,7 +381,7 @@ export default StyleSheet.create({
 	  flex : 1, 
 	  alignItems : 'center',
 	  justifyContent : 'center',
-	  marginHorizontal : 10,
+	  marginHorizontal : 5,
 	  height : DIMENSION_HEIGHT*0.3,
 	  width : DIMENSION_WIDTH*0.4
   },

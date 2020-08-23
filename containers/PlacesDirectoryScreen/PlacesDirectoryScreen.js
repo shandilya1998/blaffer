@@ -7,7 +7,7 @@ import DATA from '../../assets/data/data.js';
 import CardItem from '../../components/CardItem';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 import {connect} from 'react-redux';
-
+import {loadPlacesBatch} from '../../actions/actions_v1';
 const places = [
                 {
                         id : 'ChIJ4zGFAZpYwokRGUGph3Mf37k',
@@ -57,6 +57,13 @@ class PlacesDirectoryScreen extends Component{
 		);
 		
 	}
+
+	componentDidMount(){
+		const page = 1;
+		this.props.load(page);
+	}
+
+
 
 	render(){
 		console.log(this.props.places)
@@ -129,4 +136,10 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, null)(PlacesDirectoryScreen);
+const mapDispatchToProps = (dispatch) => {
+	return {
+		load : (page) => dispatch(loadPlacesBatch(page))
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlacesDirectoryScreen);
